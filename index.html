@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#area {
+		float: left;
+	}
+
+	#view {
+        font-size: 130px;
+    }
+
+    #view * {
+    	margin-top: 0;
+    }
+	</style>
+</head>
+<body>
+
+	<textarea id="area" rows="60" cols="60"></textarea>
+	<div id="view"><h1>gg</h1></div>
+
+<script src="node_modules/markdown/lib/markdown.js"></script>
+<script>
+	var area = document.querySelector("#area");
+	var view = document.querySelector("#view");
+
+	area.addEventListener("keyup", function(e) {
+		view.innerHTML =  markdown.toHTML(area.value);
+	});
+</script>
+</body>
+</html>
